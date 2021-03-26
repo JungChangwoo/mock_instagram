@@ -19,6 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         super.onCreate(savedInstanceState)
 
         val nickName = intent.getStringExtra("nickName")
+
         val password = intent.getStringExtra("password")
 
         binding.LoginEdittextId.setText(nickName)
