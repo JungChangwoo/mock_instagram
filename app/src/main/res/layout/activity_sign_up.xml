@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/Sign_Up_Iv_people"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/instagram_people"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/Sign_Up_Tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="#5D5D5D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Sign_Up_Iv_people"
+        app:layout_constraintVertical_bias="0.0"
+        app:tabIndicatorColor="@color/black"
+        app:tabBackground="@color/white"
+        app:tabMode="fixed"
+        android:visibility="visible"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/Sign_Up_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@+id/Sign_Up_Tablayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:layout_marginHorizontal="30dp"/>
+
+    <View
+        android:id="@+id/Sign_Up_btm_view_horizon"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E4E4E4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.93"/>
+    <TextView
+        android:id="@+id/Sign_UP_tv_alreay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정이 있으신가요?"
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@id/Sign_Up_btm_view_horizon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Sign_Up_go_login"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+    <TextView
+        android:id="@+id/Sign_Up_go_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="로그인하기"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:textColor="@color/facebook_color"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/Sign_Up_btm_view_horizon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Sign_UP_tv_alreay"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

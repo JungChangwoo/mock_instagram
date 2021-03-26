@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_default_background">
+    <TextView
+        android:id="@+id/dialog_login_error_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정을 찾을 수 없음"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/dialog_login_error_tv_instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="연결된 계정을 찾을 수 없습니다. 다른 전화번호나 이메일 주소를 사용해보세요. Instagram계정이 없으면 가입할 수 있습니다."
+        android:textSize="14dp"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_login_error_tv_title"/>
+    <View
+        android:id="@+id/dialog_login_error_view1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_login_error_tv_instruction"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/dialog_login_error_tv_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다시 시도"
+        android:textSize="16dp"
+        android:textColor="@color/facebook_color"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_login_error_view1"
+        android:layout_marginTop="10dp"/>
+
+    <View
+        android:id="@+id/dialog_login_error_view2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_login_error_tv_again"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/dialog_login_error_tv_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입하기"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_login_error_view2"
+        android:layout_marginVertical="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

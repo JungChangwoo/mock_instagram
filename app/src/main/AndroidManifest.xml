@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.myapp.softsquared_instagram">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".config.ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SoftSquared_Instagram">
+
+        <!--페이스북 메타데이터 -->
+        <!--<meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>-->
+        <activity android:name=".src.splash.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".src.login.LoginActivity"/>
+        <activity android:name=".src.signup.SignUpActivity"/>
+        <activity android:name=".src.main.MainActivity"/>
+        <activity android:name="org.myapp.softsquared_instagram.src.signup.verification.namepassword.NamePasswordActivity"/>
+        <activity android:name=".src.signup.verification.birthday.BirthdayActivity"/>
+        <activity android:name=".src.signup.verification.agree.AgreeActivity"/>
+        <activity android:name=".src.signup.verification.welcome.WelcomeActivity"/>
+        <activity android:name=".src.signup.verification.serach.SearchFacebookActivity"/>
+        <activity android:name=".src.signup.verification.profile.ProfileActivity"/>
+        <activity android:name=".src.signup.verification.private.PrivateActivity"/>
+        <activity android:name=".src.main.upload.UploadActivity"/>
+        <activity android:name=".src.main.uploadpicture.UploadPictureActivity"/>
+        <activity android:name=".src.main.patchnickname.PatchNickname"/>
+    </application>
+
+
+</manifest>

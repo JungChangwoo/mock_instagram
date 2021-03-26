@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/activity_private_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정 공개 범위"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+    <TextView
+        android:id="@+id/activity_private_tv_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:text="회원님이 공유하는 내용을 볼 수 있는 사람을 선택하세요. 설정에서 언제든지 변경할 수 있습니다."
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_private_tv_title"
+        android:layout_marginTop="20dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/activity_private_iv_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/instagram_lock"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/activity_private_tv_instruction"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/activity_private_tv_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비공개"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="@id/activity_private_iv_lock"
+        app:layout_constraintBottom_toBottomOf="@id/activity_private_iv_lock"
+        app:layout_constraintStart_toEndOf="@id/activity_private_iv_lock"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/activity_private_tv_lock_instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="회원님이 승인한 계정만 회원님의 사진과 동영상을 볼 수 있습니다."
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_private_iv_lock"
+        app:layout_constraintStart_toStartOf="@id/activity_private_iv_lock"
+        app:layout_constraintEnd_toStartOf="@id/activity_private_checkbox_lock"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"/>
+
+    <CheckBox
+        android:id="@+id/activity_private_checkbox_lock"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/facebook_checkbox_round"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/activity_private_tv_lock_instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_private_iv_lock" />
+
+    <View
+        android:id="@+id/activity_private_view"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintStart_toStartOf="@+id/activity_private_tv_lock_instruction"
+        app:layout_constraintEnd_toEndOf="@+id/activity_private_checkbox_lock"
+        app:layout_constraintTop_toBottomOf="@+id/activity_private_tv_lock_instruction"
+        android:layout_marginTop="20dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/activity_private_iv_unlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/instagram_unlock"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/activity_private_view"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/activity_private_tv_unlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전체 공개"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintTop_toTopOf="@id/activity_private_iv_unlock"
+        app:layout_constraintBottom_toBottomOf="@id/activity_private_iv_unlock"
+        app:layout_constraintStart_toEndOf="@id/activity_private_iv_unlock"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/activity_private_tv_unlock_instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="누구나 회원님의 사진과 동영상을 볼 수 있습니다."
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_private_iv_unlock"
+        app:layout_constraintStart_toStartOf="@id/activity_private_iv_unlock"
+        app:layout_constraintEnd_toStartOf="@id/activity_private_checkbox_unlock"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"/>
+
+    <CheckBox
+        android:id="@+id/activity_private_checkbox_unlock"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/facebook_checkbox_round"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/activity_private_tv_unlock_instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_private_iv_unlock" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/activity_private_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="다음"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:clickable="false"
+        android:enabled="false"
+        android:background="@drawable/unactive_facebook_color_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

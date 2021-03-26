@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentInsetStart="0dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:elevation="4dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/toolbar_home_iv_instagram"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/instagram_text_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/toolbar_home_iv_upload"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/instagram_upload"
+            app:layout_constraintEnd_toStartOf="@id/toolbar_home_iv_history"
+            android:background="@color/white"
+            android:layout_marginRight="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/toolbar_home_iv_history"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/instagram_history"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/toolbar_home_iv_dm"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_chainStyle="packed"/>
+        <ImageView
+            android:id="@+id/toolbar_home_iv_dm"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/instagram_dm"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="15dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.Toolbar>

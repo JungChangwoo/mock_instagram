@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+    <include
+        android:id="@+id/fragment_mypage_toolbar"
+        layout="@layout/toolbar_mypage" />
+
+    <com.amar.library.ui.StickyScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:stickyHeader="@id/fragment_mypage_tablayout"
+        android:orientation="vertical"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_mypage_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fragment_mypage_iv_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/fragment_mypage_tv_uploadNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="124"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_mypage_tv_upload"
+                app:layout_constraintEnd_toEndOf="@id/fragment_mypage_tv_upload"
+                app:layout_constraintStart_toStartOf="@id/fragment_mypage_tv_upload"
+                app:layout_constraintTop_toTopOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:text="게시물"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintEnd_toStartOf="@id/fragment_mypage_tv_follower"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@id/fragment_mypage_iv_profile"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_tv_uploadNum" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_followerNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="316"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_mypage_tv_follower"
+                app:layout_constraintEnd_toEndOf="@id/fragment_mypage_tv_follower"
+                app:layout_constraintStart_toStartOf="@id/fragment_mypage_tv_follower"
+                app:layout_constraintTop_toTopOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="팔로워"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintEnd_toStartOf="@id/fragment_mypage_tv_following"
+                app:layout_constraintStart_toEndOf="@id/fragment_mypage_tv_upload"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_tv_followerNum" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_followingNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="212"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fragment_mypage_tv_following"
+                app:layout_constraintEnd_toEndOf="@id/fragment_mypage_tv_following"
+                app:layout_constraintStart_toStartOf="@id/fragment_mypage_tv_following"
+                app:layout_constraintTop_toTopOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="팔로잉"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_mypage_iv_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fragment_mypage_tv_follower"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_tv_followingNum" />
+
+            <TextView
+                android:id="@+id/fragment_mypage_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="정창우"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_iv_profile" />
+
+            <LinearLayout
+                android:id="@+id/fragment_mypage_linear_btns"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_mypage_tv_name">
+
+                <Button
+                    android:id="@+id/fragment_mypage_btn_1"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_white_background"
+                    android:text="프로필 편집"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/fragment_mypage_btn_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_white_background"
+                    android:text="저장됨"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/fragment_mypage_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@color/white"
+                app:tabIndicatorColor="@color/black"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="#5D5D5D"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_linear_btns">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:icon="@drawable/instagram_grid" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:icon="@drawable/instagram_mypage_tag" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <GridView
+                android:id="@+id/fragment_mypage_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="4000dp"
+                app:layout_constraintTop_toBottomOf="@id/fragment_mypage_tablayout"
+                android:numColumns="3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.amar.library.ui.StickyScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

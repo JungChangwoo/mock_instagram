@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/activity_birthday_iv_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/birthday"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_birthday_tv_add_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생일 추가"
+        android:textSize="23dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/activity_birthday_iv_birthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_birthday_tv_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공개 프로필에 포함되지 않습니다."
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_birthday_tv_add_birthday"
+        app:layout_constraintStart_toStartOf="@+id/activity_birthday_tv_add_birthday"
+        app:layout_constraintEnd_toEndOf="@+id/activity_birthday_tv_add_birthday"
+        android:layout_marginTop="12dp"/>
+    <TextView
+        android:id="@+id/activity_birthday_tv_why_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="왜 생일을 입력해야 하나요?"
+        android:textSize="14dp"
+        android:textColor="@color/facebook_text_color"
+        app:layout_constraintTop_toBottomOf="@id/activity_birthday_tv_instruction"
+        app:layout_constraintStart_toStartOf="@id/activity_birthday_tv_instruction"
+        app:layout_constraintEnd_toEndOf="@id/activity_birthday_tv_instruction"/>
+
+    <LinearLayout
+        android:id="@+id/activity_birthday_linear_showbirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/activity_birthday_tv_why_birthday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/login_edittext_background"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/activity_birthday_tv_showbirthday"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="2020년 3월 16일"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:paddingVertical="14dp"
+            android:background="@drawable/edittext_default_background"
+            android:layout_marginVertical="1dp"
+            android:layout_marginLeft="14dp"/>
+        <TextView
+            android:id="@+id/activity_birthday_tv_showage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2세"
+            android:textSize="15dp"
+            android:textColor="@color/darkgray"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/activity_birthday_view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_birthday_linear_showbirthday"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/activity_birthday_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:background="@drawable/login_login_btn_background"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/activity_birthday_view_bottom"
+        android:layout_marginTop="15dp"/>
+
+    <DatePicker
+        android:id="@+id/activity_birthday_dp_datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:endYear="2021"
+        android:startYear="1900"
+        app:layout_constraintTop_toBottomOf="@+id/activity_birthday_btn_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/activity_agree_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="약관 동의"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/activity_agree_tv_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instagram은 회원님의 개인 정보를 안전하게 보호합니다. 새 계정을 만들려면 모든 약관에 동의하세요."
+        android:textSize="13dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <View
+        android:id="@+id/activity_agree_view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.9"/>
+    <Button
+        android:id="@+id/activity_agree_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음"
+        android:textSize="15dp"
+        android:enabled="false"
+        android:clickable="false"
+        android:textColor="@color/white"
+        android:background="@drawable/unactive_facebook_color_btn"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_view_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/activity_agree_tv_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모두 동의"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_instruction"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"/>
+
+    <CheckBox
+        android:id="@+id/activity_agree_rb_all"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/facebook_checkbox_round"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="@id/activity_agree_tv_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_agree_tv_all" />
+    <View
+        android:id="@+id/activity_agree_view_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_all"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_agree_tv_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 약관(필수)"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_view_top"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_agree_tv_service_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더 알아보기"
+        android:textSize="14dp"
+        android:textColor="@color/facebook_text_color"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_service"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent" />
+    <CheckBox
+        android:id="@+id/activity_agree_rb_service"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:layout_constraintTop_toTopOf="@id/activity_agree_tv_service"
+        app:layout_constraintBottom_toBottomOf="@id/activity_agree_tv_service_more"
+        android:button="@null"
+        android:background="@drawable/facebook_checkbox_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"/>
+
+
+    <TextView
+        android:id="@+id/activity_agree_tv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="데이터 정책(필수)"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_service_more"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_agree_tv_data_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더 알아보기"
+        android:textSize="14dp"
+        android:textColor="@color/facebook_text_color"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_data"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent" />
+    <CheckBox
+        android:id="@+id/activity_agree_rb_data"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:layout_constraintTop_toTopOf="@id/activity_agree_tv_data"
+        app:layout_constraintBottom_toBottomOf="@id/activity_agree_tv_data_more"
+        android:button="@null"
+        android:background="@drawable/facebook_checkbox_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/activity_agree_tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치 기반 기능(필수)"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_data_more"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_agree_tv_location_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더 알아보기"
+        android:textSize="14dp"
+        android:textColor="@color/facebook_text_color"
+        app:layout_constraintTop_toBottomOf="@id/activity_agree_tv_location"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent" />
+    <CheckBox
+        android:id="@+id/activity_agree_rb_location"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:layout_constraintTop_toTopOf="@id/activity_agree_tv_location"
+        app:layout_constraintBottom_toBottomOf="@id/activity_agree_tv_location_more"
+        android:button="@null"
+        android:background="@drawable/facebook_checkbox_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fragment_phone_linear_phoneinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:background="@drawable/login_edittext_background"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/fragment_phone_phoneinput_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="KR +82  |"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginVertical="14dp"
+            android:layout_marginLeft="14dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/fragment_phone_phoneinput_et"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:hint="휴대폰"
+                android:inputType="phone"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginVertical="14dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/edittext_default_background"/>
+            <ImageButton
+                android:id="@+id/fragment_phone_ib_delete"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/delete_icon"
+                android:background="#F6F6F6"
+                android:layout_gravity="center"
+                android:layout_marginRight="17dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/fragment_phone_tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="휴대폰 번호가 정확하지 않습니다. 국가 번호를 포함하여 전체 전화번호를 입력해주세요."
+        android:textColor="@color/red"
+        android:textSize="11dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/fragment_phone_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Instagram의 업데이트 내용을 SMS로 수신할 수 있으며, 언제든지 수신을 취소할 수 있습니다."
+        android:textSize="13dp"/>
+    <Button
+        android:id="@+id/fragment_phone_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_next"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:enabled="false"
+        android:clickable="false"
+        android:background="@drawable/unactive_facebook_color_btn"
+        android:layout_marginTop="15dp"/>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SoftSquared_Instagram</string>
+    <string name="facebook_app_id">[APP_ID]</string> <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
+
+
+    <!--Sign_Up -->
+    <string name="sign_up_btm_nav_phone_title">전화번호</string>
+    <string name="sign_up_btm_nav_email_title">이메일</string>
+    <string name="btn_next">다음</string>
+
+    <!-- icons_name -->
+    <string name="home">홈</string>
+    <string name="search">검색</string>
+    <string name="upload">업로드</string>
+    <string name="heart">하트</string>
+    <string name="mypage">마이페이지</string>
+</resources>

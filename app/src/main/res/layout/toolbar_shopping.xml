@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentInsetStart="0dp"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/toolbar_shopping_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/toolbar_shopping_iv_wishlist"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/shopping_wish_list"
+            app:layout_constraintEnd_toStartOf="@id/toolbar_shopping_iv_menu"
+            app:layout_constraintTop_toTopOf="@id/toolbar_shopping_iv_menu"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_shopping_iv_menu"
+            android:layout_marginRight="15dp"/>
+        <ImageView
+            android:id="@+id/toolbar_shopping_iv_menu"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/instagram_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="10dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.Toolbar>

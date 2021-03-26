@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_btm_nav_home"
+        android:icon="@drawable/instagram_home"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_main_btm_nav_search"
+        android:icon="@drawable/instagram_search"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="검색"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_reels"
+        android:icon="@drawable/instagram_viedo"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="릴스"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_shopping"
+        android:icon="@drawable/shopping_shopping"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="쇼핑"/>
+    <item
+        android:id="@+id/menu_main_btm_nav_mypage"
+        android:icon="@drawable/mypage"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="마이페이지"/>
+
+</menu>

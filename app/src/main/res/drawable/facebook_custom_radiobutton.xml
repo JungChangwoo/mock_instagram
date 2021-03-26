@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--UNSELETCTED -->
+    <item android:state_checked="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <stroke android:color="@color/lightgray" android:width="1dp"/>
+                    <corners android:radius="15dp"/>
+                    <solid android:color="@color/white"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/facebook_uncheck"
+                android:top="5dp" android:right="5dp" android:bottom="5dp" android:left="5dp"/>
+        </layer-list>
+    </item>
+
+    <!-- SELECTED -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <corners android:radius="15dp" />
+                    <solid android:color="@color/facebook_color" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/facebook_check"
+                android:top="5dp" android:right="5dp" android:bottom="5dp" android:left="5dp" />
+        </layer-list>
+    </item>
+</selector>
