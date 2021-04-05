@@ -1,9 +1,15 @@
 package org.myapp.softsquared_instagram.src.main.uploadpicture
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.AdapterView
+import org.myapp.softsquared_instagram.R
 import org.myapp.softsquared_instagram.config.BaseActivity
 import org.myapp.softsquared_instagram.databinding.ActivityUploadPictureBinding
+import org.myapp.softsquared_instagram.src.main.home.models.PostImages
 import org.myapp.softsquared_instagram.src.main.mypage.MypageGridviewAdapter
+import org.myapp.softsquared_instagram.src.main.upload.UploadActivity
 
 class UploadPictureActivity:BaseActivity<ActivityUploadPictureBinding>(ActivityUploadPictureBinding::inflate) {
 
@@ -13,6 +19,7 @@ class UploadPictureActivity:BaseActivity<ActivityUploadPictureBinding>(ActivityU
         val nickName = intent.getStringExtra("nickName").toString()
         val userIdx = intent.getStringExtra("userIdx").toString()
         val jwt = intent.getStringExtra("jwt").toString()
+
 
         val pictureArrayList = arrayListOf<String>()
         pictureArrayList.add("https://blog.hmgjournal.com/images/contents/article/20161013-Reissue-city-nightview-01.jpg")
@@ -45,11 +52,37 @@ class UploadPictureActivity:BaseActivity<ActivityUploadPictureBinding>(ActivityU
         pictureArrayList.add("https://blog.hmgjournal.com/images/contents/article/20161013-Reissue-city-nightview-01.jpg")
         pictureArrayList.add("https://blog.hmgjournal.com/images/contents/article/20161013-Reissue-city-nightview-01.jpg")
         pictureArrayList.add("https://blog.hmgjournal.com/images/contents/article/20161013-Reissue-city-nightview-01.jpg")
-        val pictureAdapter = UploadPictureGridviewAdapter(this, pictureArrayList, nickName, userIdx, jwt)
+
+        binding.activityUploadPictureIvChoice.setOnClickListener {
+            binding.activityUploadPictureIvChoice.setImageResource(R.drawable.upload_multiple)
+            val pictureAdapter =
+                UploadPictureGridviewAdapter(this, pictureArrayList, nickName, userIdx, jwt, true)
+            binding.activityUploadPictureGridview.adapter = pictureAdapter
+        }
+
+        val pictureAdapter =
+            UploadPictureGridviewAdapter(this, pictureArrayList, nickName, userIdx, jwt, false)
         binding.activityUploadPictureGridview.adapter = pictureAdapter
+
+        var postImages = arrayListOf<PostImages>()
+        binding.activityUploadPictureGridview.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                postImages.add(PostImages(pictureArrayList[position]))
+                Log.d("DDDDDDDDDDDDDDD", postImages.toString())
+                showCustomToast("사진이 추가되었습니다.")
+            }
+        binding.activityUploadPictureNext.setOnClickListener {
+            val intent = Intent(this, UploadActivity::class.java)
+            //Log.d("dddddddddddddddddd", postImages.toString())
+            intent.putExtra("postImages", postImages)
+            //Log.d("dddddddddddddddddd", postImages.toString())
+            intent.putExtra("nickName", nickName)
+            intent.putExtra("userIdx", userIdx)
+            intent.putExtra("jwt", jwt)
+            startActivity(intent)
+        }
 
     }
 
-
-
 }
+

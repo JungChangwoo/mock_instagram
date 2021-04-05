@@ -11,17 +11,26 @@ import retrofit2.http.*
 interface MypageRetrofitInterface {
 
     //           +변수+ 가 들어가야 함함
-   @GET("/users/{userIdx}/my-page?")
+    @GET("/users/{userIdx}/my-page?")
     fun getMypageUsers(
-        @Path ("userIdx") userIdx : String,
-        @Header("X-ACCESS-TOKEN") jwt : String,
-        @Query("nickName") nickName : String
-    ) : Call<MypageResponse>
+        @Path("userIdx") userIdx: String,
+        @Header("X-ACCESS-TOKEN") jwt: String,
+        @Query("nickName") nickName: String
+    ): Call<MypageResponse>
 
     @POST("/users/{userIdx}/following")
     fun postMypageFollowing(
-        @Path("userIdx") userIdx : String,
-        @Header("X-ACCESS-TOKEN") jwt : String,
-        @Body params : PostFollowingRequest
-    ) : Call<FollowingResponse>
+        @Path("userIdx") userIdx: String,
+        @Header("X-ACCESS-TOKEN") jwt: String,
+        @Body params: PostFollowingRequest
+    ): Call<FollowingResponse>
+
+    @PATCH("/users/{userIdx}/following/status")
+    fun patchMypageUnfollow(
+        @Path("userIdx") userIdx: String,
+        @Header("X-ACCESS-TOKEN") jwt: String,
+        @Body params: PostFollowingRequest
+    ): Call<FollowingResponse>
+
+
 }

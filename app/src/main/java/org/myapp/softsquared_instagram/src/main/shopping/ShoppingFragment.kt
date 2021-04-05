@@ -2,6 +2,7 @@ package org.myapp.softsquared_instagram.src.main.shopping
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import org.myapp.softsquared_instagram.R
 import org.myapp.softsquared_instagram.config.BaseFragment
 import org.myapp.softsquared_instagram.databinding.FragmentShoppingBinding
@@ -11,6 +12,8 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(FragmentShoppingB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.window?.statusBarColor = ContextCompat.getColor(context!!, R.color.white)
+        activity?.window?.navigationBarColor= ContextCompat.getColor(context!!, R.color.white)
 
         val shoppingGridArray = arrayListOf<ShoppingData>()
         shoppingGridArray.add(ShoppingData("oiehofo", R.drawable.shopping_image1))

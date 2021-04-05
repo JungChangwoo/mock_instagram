@@ -12,4 +12,8 @@ interface MypageFragmentView {
     fun onGetFollowingSuccess(response : FollowingResponse)
 
     fun onGetFollowingFailure(message: String)
+
+    fun onPatchUnfollowSuccess(response: FollowingResponse)
+
+    fun onPatchUnfollowFailure(message: String)
 }

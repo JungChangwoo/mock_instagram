@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import org.myapp.softsquared_instagram.R
 import org.myapp.softsquared_instagram.config.BaseFragment
 import org.myapp.softsquared_instagram.databinding.FragmentMainMypageBinding
@@ -18,6 +20,10 @@ class MypageFragment:BaseFragment<FragmentMainMypageBinding>(FragmentMainMypageB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.window?.statusBarColor = ContextCompat.getColor(context!!, R.color.white)
+        activity?.window?.navigationBarColor= ContextCompat.getColor(context!!, R.color.white)
+        binding.fragmentMypageGridview.isNestedScrollingEnabled = false
+
 
         binding.fragmentMypageIvProfile.setImageResource(R.drawable.instagram_mypage)
 
@@ -33,15 +39,18 @@ class MypageFragment:BaseFragment<FragmentMainMypageBinding>(FragmentMainMypageB
             binding.fragmentMypageBtn1.setTextColor(Color.parseColor("#000000"))
             binding.fragmentMypageBtn1.setBackgroundResource(R.drawable.button_white_background)
             binding.fragmentMypageBtn2.text = "저장됨"
-            binding.fragmentMypageToolbar.toolbarMypageIvAlarm.setBackgroundResource(R.drawable.instagram_upload)
+            binding.fragmentMypageToolbar.toolbarMypageIvAlarm.setImageResource(R.drawable.instagram_upload)
             binding.fragmentMypageToolbar.toolbarMypageIvBack.visibility = View.GONE
+            binding.fragmentMypageToolbar.toolbarMypageIvOption.setImageResource(R.drawable.instagram_menu)
         } else{
+            binding.fragmentMypageIvProfile.let{ Glide.with(context!!).load("https://www.interview365.com/news/photo/201907/87957_114580_5511.jpg").into(it)}
             binding.fragmentMypageBtn1.text = "팔로우"
             binding.fragmentMypageBtn1.setTextColor(Color.parseColor("#FFFFFFFF"))
             binding.fragmentMypageBtn1.setBackgroundResource(R.drawable.login_login_btn_background)
             binding.fragmentMypageBtn2.text = "메세지"
-            binding.fragmentMypageToolbar.toolbarMypageIvAlarm.setBackgroundResource(R.drawable.instagram_alarm)
+            binding.fragmentMypageToolbar.toolbarMypageIvAlarm.setImageResource(R.drawable.instagram_alarm)
             binding.fragmentMypageToolbar.toolbarMypageIvBack.visibility = View.VISIBLE
+            binding.fragmentMypageToolbar.toolbarMypageIvOption.setImageResource(R.drawable.instagram_option)
         }
 
         //프로필 편집 or 팔로우 버튼 누르기
@@ -56,9 +65,15 @@ class MypageFragment:BaseFragment<FragmentMainMypageBinding>(FragmentMainMypageB
             }
         } else{
             binding.fragmentMypageBtn1.setOnClickListener {
+                if (binding.fragmentMypageBtn1.text == "팔로우"){
                 val postFollowingRequest = PostFollowingRequest(followingNickName = nickName)
                 showLoadingDialog(context!!)
                 MypageService(this).tryPostFollowing((activity as MainActivity).userIdx,jwt ,postFollowingRequest)
+                } else{
+                    val patchUnFollowRequest = PostFollowingRequest(followingNickName = nickName)
+                    showLoadingDialog(context!!)
+                    MypageService(this).tryPatchUnfollow((activity as MainActivity).userIdx, jwt,patchUnFollowRequest)
+                }
             }
         }
 
@@ -88,6 +103,18 @@ class MypageFragment:BaseFragment<FragmentMainMypageBinding>(FragmentMainMypageB
     }
 
     override fun onGetFollowingFailure(message: String) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onPatchUnfollowSuccess(response: FollowingResponse) {
+        dismissLoadingDialog()
+        showCustomToast("팔로우 취소")
+        binding.fragmentMypageBtn1.setBackgroundResource(R.drawable.login_login_btn_background)
+        binding.fragmentMypageBtn1.text = "팔로우"
+        binding.fragmentMypageBtn1.setTextColor(Color.parseColor("#FFFFFFFF"))
+    }
+
+    override fun onPatchUnfollowFailure(message: String) {
         TODO("Not yet implemented")
     }
 

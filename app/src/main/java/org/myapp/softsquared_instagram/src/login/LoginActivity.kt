@@ -17,7 +17,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val nickName = intent.getStringExtra("nickName")
 
         val password = intent.getStringExtra("password")

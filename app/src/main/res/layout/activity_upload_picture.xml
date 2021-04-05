@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/activity_upload_picture_cancle"
@@ -35,6 +36,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:scaleType="fitXY"
+        android:clickable="true"
         android:src="@drawable/facebook_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -66,6 +68,24 @@
         app:layout_constraintTop_toTopOf="@id/activity_upload_picture_tv_gallery"
         app:layout_constraintBottom_toBottomOf="@id/activity_upload_picture_tv_gallery"
         android:layout_marginLeft="5dp"/>
+    <ImageView
+        android:id="@+id/activity_upload_picture_iv_choice"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/upload_single"
+        app:layout_constraintTop_toTopOf="@id/activity_upload_picture_iv_camere"
+        app:layout_constraintBottom_toBottomOf="@id/activity_upload_picture_iv_camere"
+        app:layout_constraintEnd_toStartOf="@id/activity_upload_picture_iv_camere"
+        android:layout_marginRight="5dp"/>
+    <ImageView
+        android:id="@+id/activity_upload_picture_iv_camere"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/upload_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activity_upload_picture_tv_gallery"
+        app:layout_constraintBottom_toBottomOf="@id/activity_upload_picture_tv_gallery"
+        android:layout_marginRight="10dp"/>
     <GridView
         android:id="@+id/activity_upload_picture_gridview"
         android:layout_width="match_parent"

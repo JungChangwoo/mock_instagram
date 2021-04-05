@@ -45,4 +45,21 @@ class MypageService(val view:MypageFragmentView) {
 
         })
     }
+
+    fun tryPatchUnfollow(userIdx: String,jwt: String,patchUnfollowRequest : PostFollowingRequest){
+        val mypageRetrofitInterface = ApplicationClass.sRetrofit.create(MypageRetrofitInterface::class.java)
+        mypageRetrofitInterface.patchMypageUnfollow(userIdx,jwt,patchUnfollowRequest).enqueue(object : Callback<FollowingResponse>{
+            override fun onResponse(
+                call: Call<FollowingResponse>,
+                response: Response<FollowingResponse>
+            ) {
+                view.onPatchUnfollowSuccess(response.body() as FollowingResponse)
+            }
+
+            override fun onFailure(call: Call<FollowingResponse>, t: Throwable) {
+                view.onPatchUnfollowFailure(t.message ?: "통신 오류")
+            }
+
+        })
+    }
 }

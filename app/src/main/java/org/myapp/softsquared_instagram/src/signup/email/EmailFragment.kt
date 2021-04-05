@@ -1,21 +1,15 @@
 package org.myapp.softsquared_instagram.src.signup.email
 
-import android.app.AlertDialog
-import android.app.FragmentManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import org.myapp.softsquared_instagram.R
 import org.myapp.softsquared_instagram.config.BaseFragment
 import org.myapp.softsquared_instagram.databinding.FragmentSignUpEmailBinding
-import org.myapp.softsquared_instagram.src.login.LoginActivity
 import org.myapp.softsquared_instagram.src.signup.email.models.UserEmailResponse
 import org.myapp.softsquared_instagram.src.signup.verification.namepassword.NamePasswordActivity
 

@@ -10,25 +10,24 @@
         layout="@layout/toolbar_mypage" />
 
     <com.amar.library.ui.StickyScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         xmlns:tools="http://schemas.android.com/tools"
         app:stickyHeader="@id/fragment_mypage_tablayout"
         android:orientation="vertical"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_mypage_toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/fragment_mypage_toolbar">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:descendantFocusability="blocksDescendants">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/fragment_mypage_iv_profile"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ic_launcher_background"
@@ -121,7 +120,7 @@
                 android:id="@+id/fragment_mypage_tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:text="정창우"
                 android:textColor="@color/black"
@@ -185,8 +184,10 @@
                 android:id="@+id/fragment_mypage_gridview"
                 android:layout_width="match_parent"
                 android:layout_height="4000dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fragment_mypage_tablayout"
-                android:numColumns="3" />
+                android:numColumns="3"
+                android:layout_marginBottom="55dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.amar.library.ui.StickyScrollView>

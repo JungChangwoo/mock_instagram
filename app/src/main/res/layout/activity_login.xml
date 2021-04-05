@@ -151,7 +151,8 @@
     <ImageButton
         android:id="@+id/Login_button_facebook_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/instagram_facebook_login"
         android:background="@color/white"
         android:layout_marginHorizontal="30dp"

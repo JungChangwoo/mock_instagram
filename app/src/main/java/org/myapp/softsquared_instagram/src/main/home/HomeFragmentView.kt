@@ -1,15 +1,14 @@
 package org.myapp.softsquared_instagram.src.main.home
 
 import org.myapp.softsquared_instagram.src.main.home.models.HomeFeedResponse
-import org.myapp.softsquared_instagram.src.main.home.models.UploadResponse
-import org.myapp.softsquared_instagram.src.main.search.models.UserSearchResponse
+import org.myapp.softsquared_instagram.src.main.home.models.PostLikeResponse
 
 interface HomeFragmentView {
     fun onGetHomeFeedSuccess(response: HomeFeedResponse)
 
     fun onGetHomeFeedFailure(message:String)
 
-    fun onPostUploadSuccess(response: UploadResponse)
+    fun onPostLikeSuccess(response : PostLikeResponse)
 
-    fun onPostUploadFailure(message:String)
+    fun onPostLikeFailure(message: String)
 }

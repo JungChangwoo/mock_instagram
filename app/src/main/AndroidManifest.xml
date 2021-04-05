@@ -38,6 +38,10 @@
         <activity android:name=".src.main.upload.UploadActivity"/>
         <activity android:name=".src.main.uploadpicture.UploadPictureActivity"/>
         <activity android:name=".src.main.patchnickname.PatchNickname"/>
+        <activity android:name=".src.main.home.patch.FeedPatchActivity"/>
+        <activity android:name=".src.main.home.comments.CommentsActivity"/>
+        <activity android:name=".src.main.home.story.StoryActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.myapp.softsquared_instagram.R
 import org.myapp.softsquared_instagram.config.BaseFragment
@@ -21,7 +22,8 @@ class SearchFragment : BaseFragment<FragmentMainSearchBinding>(FragmentMainSearc
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        activity?.window?.statusBarColor = ContextCompat.getColor(context!!, R.color.white)
+        activity?.window?.navigationBarColor= ContextCompat.getColor(context!!, R.color.white)
 
         //edittext delete버튼 클릭시 다 지움
         binding.fragmentSearchIvSearchDelete.setOnClickListener{

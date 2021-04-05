@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menu_main_btm_nav_home"
-        android:icon="@drawable/instagram_home"
+        android:icon="@drawable/navigation_home"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
@@ -12,28 +12,28 @@
 
     <item
         android:id="@+id/menu_main_btm_nav_search"
-        android:icon="@drawable/instagram_search"
+        android:icon="@drawable/navigation_search"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
         android:title="검색"/>
     <item
         android:id="@+id/menu_main_btm_nav_reels"
-        android:icon="@drawable/instagram_viedo"
+        android:icon="@drawable/navigation_reels"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
         android:title="릴스"/>
     <item
         android:id="@+id/menu_main_btm_nav_shopping"
-        android:icon="@drawable/shopping_shopping"
+        android:icon="@drawable/navigation_shopping"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
         android:title="쇼핑"/>
     <item
         android:id="@+id/menu_main_btm_nav_mypage"
-        android:icon="@drawable/mypage"
+        android:icon="@drawable/navigation_mypage2"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"

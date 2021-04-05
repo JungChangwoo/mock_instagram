@@ -2,12 +2,10 @@ package org.myapp.softsquared_instagram.src.main.home
 
 import org.myapp.softsquared_instagram.config.ApplicationClass
 import org.myapp.softsquared_instagram.src.main.home.models.HomeFeedResponse
-import org.myapp.softsquared_instagram.src.main.home.models.PostUploadRequest
-import org.myapp.softsquared_instagram.src.main.home.models.UploadResponse
+import org.myapp.softsquared_instagram.src.main.home.models.PostLikeResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.create
 
 
 class HomeService(val view : HomeFragmentView) {
@@ -27,16 +25,18 @@ class HomeService(val view : HomeFragmentView) {
         })
     }
 
-    fun postUploadFeed(userIdx:String, jwt : String, postUploadFeed : PostUploadRequest) {
+    fun tryPostLike(userIdx: String, jwt: String, postIdx:Int){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.UploadFeed(userIdx,jwt,postUploadFeed).enqueue(object : Callback<UploadResponse>{
-            override fun onResponse(call: Call<UploadResponse>, response: Response<UploadResponse>
+        homeRetrofitInterface.postLike(userIdx,jwt, postIdx).enqueue(object : Callback<PostLikeResponse>{
+            override fun onResponse(
+                call: Call<PostLikeResponse>,
+                response: Response<PostLikeResponse>
             ) {
-                view.onPostUploadSuccess(response.body() as UploadResponse)
+                view.onPostLikeSuccess(response.body() as PostLikeResponse)
             }
 
-            override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-                view.onPostUploadFailure(t.message ?: "통신 오류")
+            override fun onFailure(call: Call<PostLikeResponse>, t: Throwable) {
+                view.onPostLikeFailure(t.message ?: "통신 오류")
             }
 
         })
